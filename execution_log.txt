@@ -1,0 +1,38 @@
+$ python3 port_status_checker.py
+Enter target host (IP or hostname): 127.0.0.1
+Enter port range (e.g., 1-100): 20-100
+Enter timeout in seconds (default 1.0): 0.3
+Attempt to grab service banners for open ports? (y/n): n
+
+Scanning 127.0.0.1 from port 20 to 100
+Started at: 2026-09-26 17:25:05.411726
+
+PORT      STATUS      SERVICE INFO
+--------------------------------------------------
+20        Closed
+21        Closed
+22        Closed
+23        Closed
+24        Closed
+25        Closed
+26        Closed
+27        Closed
+28        Closed
+29        Closed
+30        Closed
+...
+(ports 31-99 omitted for brevity — all Closed in this environment)
+...
+100       Closed
+
+Summary:
+  Open ports:     []
+  Closed ports:   81 ports
+  Filtered ports: []
+
+NOTE: This log was captured in a sandboxed container with no active
+listening services, so every port returned Closed. Run the script on
+your own machine (or against scanme.nmap.org) to capture a log with a
+realistic mix of Open, Closed, and Filtered ports — for example, port
+22 (SSH) or 80 (HTTP) will show "Open" if those services are running
+on your target host.
